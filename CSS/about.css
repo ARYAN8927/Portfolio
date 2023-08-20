@@ -1,0 +1,114 @@
+* {
+    left: 0;
+    top: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+    /* --primary-color: #FBE4D8;
+    --secondary-color: #05161A; */
+    --c-background-image: url(../Res/17973908.jpg);
+    --c-text: #666;
+    --c-heading: #212121;
+    --c-primary: #f33490;
+    --c-accent: #f6c720;
+}
+
+.dark-theme {
+    --c-background-image: url(../Res/abstract-dark-blue-futuristic-digital-grid-background.jpg);
+    --c-text: #bdb8b8;
+    --c-heading: #ffffff;
+    --c-primary: #ff82be;
+    --c-accent: #ffe040;
+}
+
+
+body {
+    background-image: var(--c-background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: var(--c-text);
+}
+
+.heading {
+    color: var(--c-heading);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    display: flex;
+    top: 0;
+    left: 0;
+}
+
+
+.navlist {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    right: 0px;
+    padding-left: 650px;
+}
+
+.navitems {
+    text-decoration: none;
+    width: 120px;
+    height: 40px;
+    text-align: right;
+}
+
+.navitems:hover {
+    font-weight: bolder;
+    color: var(--c-heading);
+    border-bottom: 3px solid var(--c-heading);
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    color: var(--c-heading);
+    cursor: pointer;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+}
+
+.experience {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(19, 159, 184);
+    /* Set your desired background color */
+    position: relative;
+}
+
+.experience :before,
+.experience:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+.experience:before {
+    border-bottom: 25px solid #f00;
+    /* Set your desired background color */
+}
+
+.experience:after {
+    border-top: 25px solid #f00;
+    /* Set your desired background color */
+}
