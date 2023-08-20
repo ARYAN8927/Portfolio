@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body id="body">
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitems"><a href="home.html"><img src="../Res/home.png" alt="home">Home</a></li>
+            <li class="navitems"><a href="about.html"><img src="../Res/info.png" alt="info">About</a></li>
+            <li class="navitems"><a href="education.html"><img src="../Res/education.png" alt="info">Education</a></li>
+            <li class="navitems"><a href="contact.html"><img src="../Res/phone.png" alt="info">Contact</a></li>
+        </ul>
+        <ul style="list-style: none; right: 0px;">
+            <li style="cursor: pointer;"><img src="../Res/half-moon.png" alt="half-moon" id="moon"></li>
+        </ul>
+    </nav>
+    <div class="experience">
+        <h2><img src="../Res/expertise.png" alt="expertise"> Experience</h2>
+        <ul>
+            <li>
+                <h4>Completed IBM SkillBuild Internship Program</h4>
+            </li>
+            <li>
+                <h4>Intern at Persistent Martian Program</h4>
+            </li>
+        </ul>
+    </div>
+    <div class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>
+                <h4>Basics Knowledge of C/C++, Java</h4>
+            </li>
+            <li>
+                <h4>Basics Knowledge of Data Structure and Algorithm, Database Management System, Computer Network</h4>
+            </li>
+            <li>
+                <h4>Designing using Canva</h4>
+            </li>
+        </ul>
+    </div>
+    <div class="language">
+        <h2>Languages</h2>
+        <ul>
+            <li>
+                <h4>Can speak and read English fluently</h4>
+            </li>
+            <li>
+                <h4>Can speak in hindi</h4>
+            </li>
+            <li>
+                <h4>Mother tongue Bengali. can speak, read, Write in Bengali seemleassly and fluently</h4>
+            </li>
+        </ul>
+        
+    </div>
+
+</body>
+<script>
+    var icon = document.getElementById("moon");
+    var body = document.getElementById("body");
+
+    icon.onclick = function () {
+        body.classList.toggle("dark-theme");
+        if (body.classList.contains("dark-theme")) {
+            icon.src = "../Res/sun.png";
+            localStorage.setItem("theme", "dark");
+        } else {
+            icon.src = "../Res/half-moon.png";
+            localStorage.setItem("theme", "light");
+        }
+    }
+
+    // Check for previously selected theme on page load
+    window.addEventListener("load", function () {
+        var theme = localStorage.getItem("theme");
+        if (theme === "dark") {
+            body.classList.add("dark-theme");
+            icon.src = "../Res/sun.png";
+        } else {
+            body.classList.remove("dark-theme");
+            icon.src = "../Res/half-moon.png";
+        }
+    });
+</script>
+
+</html>

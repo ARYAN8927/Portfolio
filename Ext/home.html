@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio of Priyabrata</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body id="body">
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitems"><a href="home.html"><img src="../Res/home.png" alt="home">Home</a></li>
+            <li class="navitems"><a href="about.html"><img src="../Res/info.png" alt="info">About</a></li>
+            <li class="navitems"><a href="education.html"><img src="../Res/education.png" alt="info">Education</a></li>
+            <li class="navitems"><a href="contact.html"><img src="../Res/phone.png" alt="info">Contact</a></li>
+        </ul>
+        <ul style="list-style: none; right: 0px;">
+            <li style="cursor: pointer;"><img src="../Res/half-moon.png" alt="half-moon" id="moon"></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="left_container">
+            <h1 style="line-height: 2.5rem;">Hi, I'm Priyabrata Bhoumik</h1>
+            <h4>B.Tech Student in Computer Science and Engineering</h4>
+            <p>I'm currently pursuing B.Tech in Computer Science and Engineering from University of Calcutta. I am a
+                good listener and learner, able to communicate well with a group and an individual level. I am quite
+                good at front-end development.</p>
+        </div>
+        <div class="right_content">
+            <!-- <img src="../Res/graph.png" class="background-image" alt="Background Image"> -->
+            <img src="../Res/FB_IMG_1671306788928-removebg-preview1.png" class="foreground-image"
+                alt="Foreground Image">
+        </div>
+    </div>
+    <!-- <div class="notification">
+        <p>Welcome back Priyabrata</p>
+        <span class="notification-progress"></span>
+    </div> -->
+    <script>
+        var icon = document.getElementById("moon");
+        var body = document.getElementById("body");
+
+        icon.onclick = function () {
+            body.classList.toggle("dark-theme");
+            if (body.classList.contains("dark-theme")) {
+                icon.src = "../Res/sun.png";
+                localStorage.setItem("theme", "dark");
+            } else {
+                icon.src = "../Res/half-moon.png";
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // Check for previously selected theme on page load
+        window.addEventListener("load", function () {
+            var theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                body.classList.add("dark-theme");
+                icon.src = "../Res/sun.png";
+            } else {
+                body.classList.remove("dark-theme");
+                icon.src = "../Res/half-moon.png";
+            }
+        });
+    </script>
+    <script>
+        var words = ['Hi i like HTML', 'I also like css', 'Lorem ipsum dolor sit amet', ' consectetur adipiscing elit', 'sed do eiusmod tempor incididunt'],
+            part,
+            i = 0,
+            offset = 0,
+            len = words.length,
+            forwards = true,
+            skip_count = 0,
+            skip_delay = 15,
+            speed = 70;
+        var wordflick = function () {
+            setInterval(function () {
+                if (forwards) {
+                    if (offset >= words[i].length) {
+                        ++skip_count;
+                        if (skip_count == skip_delay) {
+                            forwards = false;
+                            skip_count = 0;
+                        }
+                    }
+                }
+                else {
+                    if (offset == 0) {
+                        forwards = true;
+                        i++;
+                        offset = 0;
+                        if (i >= len) {
+                            i = 0;
+                        }
+                    }
+                }
+                part = words[i].substr(0, offset);
+                if (skip_count == 0) {
+                    if (forwards) {
+                        offset++;
+                    }
+                    else {
+                        offset--;
+                    }
+                }
+                $('.word').text(part);
+            }, speed);
+        };
+
+        $(document).ready(function () {
+            wordflick();
+        });
+    </script>
+</body>
+
+</html>

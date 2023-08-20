@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body id="body">
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitems"><a href="home.html"><img src="../Res/home.png" alt="home">Home</a></li>
+            <li class="navitems"><a href="about.html"><img src="../Res/info.png" alt="info">About</a></li>
+            <li class="navitems"><a href="education.html"><img src="../Res/education.png" alt="info">Education</a></li>
+            <li class="navitems"><a href="contact.html"><img src="../Res/phone.png" alt="info">Contact</a></li>
+        </ul>
+        <ul style="list-style: none; right: 0px;">
+            <li style="cursor: pointer;"><img src="../Res/half-moon.png" alt="half-moon" id="moon"></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Contact Me</h1>
+        <p>Get in touch</p>
+    </div>
+    <div class="container">
+        <div class="left-container">
+            <div class="list1">
+                <div class="icon">
+                    <img src="../Res/phone-call.png" alt="phone-call">
+                </div>
+                <div class="list-details">
+                    <h3>Call Me</h3>
+                    <p>+91 7679402762</p>
+                </div>
+            </div>
+            <div class="list2">
+                <div class="icon">
+                    <img src="../Res/gmail.png" alt="gmail">
+                </div>
+                <div class="list-details">
+                    <h3>Email</h3>
+                    <p>pbhoumik987@gmail.com</p>
+                </div>
+            </div>
+            <div class="list3">
+                <div class="icon">
+                    <img src="../Res/map.png" alt="map">
+                </div>
+                <div class="list-details">
+                    <h3>Location</h3>
+                    <p>1, Vidyasagar Street, Kol - 700 009</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <textarea name="message" id="message" cols="30" rows="10"> write a message to me</textarea>
+            <br>
+            <button>
+                <div class="svg-wrapper-1">
+                    <div class="svg-wrapper">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </div>
+                <span>Send Message</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="social-links">
+        <div class="top-heading">
+            <h3>Follow me on</h3>
+        </div>
+        <div class="card">
+            <div class="card-items" id="linkedin">
+                <a href="https://www.linkedin.com/in/priyabrata-bhoumik-189bb5201" target="_blank"><img
+                        src="../Res/linkedin.png" alt="linkedin"></a>
+            </div>
+            <div class="card-items" id="facebook">
+                <a href="https://www.facebook.com/priyabrata.bhoumik?mibextid=ZbWKwL" target="_blank"><img
+                        src="../Res/facebook.png" alt="facebook"></a>
+            </div>
+            <div class="card-items" id="instagram">
+                <a href="https://instagram.com/bhoumik.priyabrata?igshid=ZGUzMzM3NWJiOQ==" target="_blank"><img
+                        src="../Res/instagram.png" alt="instagram"></a>
+            </div>
+            <div class="card-items" id="github">
+                <a href="https://github.com/ARYAN8927" target="_blank"><img src="../Res/github.png" alt="github"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var icon = document.getElementById("moon");
+        var body = document.getElementById("body");
+
+        icon.onclick = function () {
+            body.classList.toggle("dark-theme");
+            if (body.classList.contains("dark-theme")) {
+                icon.src = "../Res/sun.png";
+                localStorage.setItem("theme", "dark");
+            } else {
+                icon.src = "../Res/half-moon.png";
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // Check for previously selected theme on page load
+        window.addEventListener("load", function () {
+            var theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                body.classList.add("dark-theme");
+                icon.src = "../Res/sun.png";
+            } else {
+                body.classList.remove("dark-theme");
+                icon.src = "../Res/half-moon.png";
+            }
+        });
+    </script>
+</body>
+
+</html>
